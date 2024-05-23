@@ -1,0 +1,14 @@
+ORG 100H
+.MODEL SMALL
+.DATA
+    MSG_1 DB "Hello World! $"
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX
+    
+    MOV AH, 9
+    LEA DX, MSG_1
+    INT 21H
+MAIN ENDP
+END MAIN
